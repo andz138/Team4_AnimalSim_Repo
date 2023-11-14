@@ -53,22 +53,24 @@ include('common.php');
 myHeader('Virtual Pet Game');
 ?>
 
-<h1><?php echo $_SESSION['username']?>'s Virtual Pet</h1>
+<body class="game">
+    <h1><?php echo $_SESSION['username']?>'s Virtual Pet</h1>
 
-<div class="container">
-    <img class="pet-image" src="pet.png" alt="Pet">
-    <div class="stats">
-        <p>Happiness: <?php echo $_SESSION['happiness']?>%</p>
-        <p>Hunger: <?php echo $_SESSION['hunger']?>%</p>
-        <p>Energy: <?php echo $_SESSION['energy']?>%</p>
+    <div class="container">
+        <img class="pet-image" src="pet.png" alt="Pet">
+        <div class="stats">
+            <p>Happiness: <?php echo $_SESSION['happiness']?>%</p>
+            <p>Hunger: <?php echo $_SESSION['hunger']?>%</p>
+            <p>Energy: <?php echo $_SESSION['energy']?>%</p>
+        </div>
     </div>
-</div>
 
-<form method="POST" action="">
-    <input type="submit" name="feed" value="Feed">
-    <input type="submit" name="play" value="Play">
-    <input type="submit" name="logout" value="Logout">
-</form>
+    <form method="POST" action="">
+        <input type="submit" name="feed" value="Feed">
+        <input type="submit" name="play" value="Play">
+        <input type="submit" name="logout" value="Logout">
+    </form>
+</body>
 
 <?php
 myFooter();

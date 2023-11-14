@@ -1,0 +1,79 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+body.index {
+    background-image: url('images/bones_background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body.game {
+    background-image: url('images/bones_background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body.leaderboard {
+    background-image: url('images/bones_background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body.register {
+    background-image: url('images/dog_flowers.jpg');
+    background-size: cover;
+    background-position: center 10%;
+    background-repeat: no-repeat;
+}
+
+body.login {
+    background-image: url('images/dog_flowers.jpg');
+    background-size: cover;
+    background-position: center 10%;
+    background-repeat: no-repeat;
+}
+
+.container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.pet-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.stats {
+    font-size: 18px;
+}
+
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+a {
+    color: #0088cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

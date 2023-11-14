@@ -18,16 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include('common.php');
 myHeader('Login');
 ?>
-
-<h2>Login</h2>
-<form method="POST" action="">
-    <label for="username">Username:</label>
-    <input type="text" name="username" required><br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" required><br>
-    <input type="submit" value="Login">
-</form>
-
+<body class="login">
+    <h2>Login</h2>
+    <form method="POST" action="">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
 <?php
 myFooter();
 ?>
