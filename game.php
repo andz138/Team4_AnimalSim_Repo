@@ -57,7 +57,7 @@ myHeader('Virtual Pet Game');
     <h1><?php echo $_SESSION['username']?>'s Virtual Pet</h1>
 
     <div class="container">
-        <img class="pet-image" src="pet.png" alt="Pet">
+        <img class="pet-image" src="images/pet.png" alt="Pet">
         <div class="stats">
             <p>Happiness: <?php echo $_SESSION['happiness']?>%</p>
             <p>Hunger: <?php echo $_SESSION['hunger']?>%</p>

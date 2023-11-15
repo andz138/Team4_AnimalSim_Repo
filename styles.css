@@ -6,27 +6,35 @@ body {
 }
 
 body.index {
-    background-image: url('background_index.jpg');
+    background-image: url('images/bones_background.jpg');
     background-size: cover;
     background-position: center;
 }
 
 body.game {
-    background-image: url('background_game.jpg');
+    background-image: url('images/bones_background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body.leaderboard {
+    background-image: url('images/bones_background.jpg');
     background-size: cover;
     background-position: center;
 }
 
 body.register {
-    background-image: url('background_register.jpg');
+    background-image: url('images/dog_flowers.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 10%;
+    background-repeat: no-repeat;
 }
 
 body.login {
-    background-image: url('background_login.jpg');
+    background-image: url('images/dog_flowers.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 10%;
+    background-repeat: no-repeat;
 }
 
 .container {
