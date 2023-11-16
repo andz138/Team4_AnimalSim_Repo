@@ -6,11 +6,18 @@ myHeader('Virtual Pet Game');
 <body class="index">
     <div class="container">
         <h1>Welcome to the Virtual Pet Game!</h1>
+
+        <ul>
+            <li>
+                <img src="images/login.png" alt="Login Image">
+                <a href="login.php">Login</a>
+            </li>
+            <li>
+                <img src="images/register.png" alt="Register Image">
+                <a href="register.php">Register</a>
+            </li>
+        </ul>
         
-        <a href="login.php">Login</a></li>
-        <a href="register.php">Register</a></li>
-        
-        <!-- Display the leaderboard here -->
         <h2>Leaderboard</h2>
         <table>
             <tr>
@@ -20,7 +27,6 @@ myHeader('Virtual Pet Game');
                 <th>Hunger</th>
                 <th>Energy</th>
             </tr>
-            <!-- Replace the sample data with your actual leaderboard data -->
             <tr>
                 <td>1</td>
                 <td>User1</td>
@@ -44,8 +50,8 @@ myHeader('Virtual Pet Game');
             </tr>
         </table>
     </div>
-</body>
-
 <?php
 myFooter();
 ?>
+</body>
+</html>

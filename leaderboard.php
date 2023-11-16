@@ -16,7 +16,6 @@ myHeader('Leaderboard');
                 <th>Hunger</th>
                 <th>Energy</th>
             </tr>
-            <!-- Replace the sample data with your actual leaderboard data -->
             <tr>
                 <td>1</td>
                 <td>User1</td>
@@ -40,8 +39,8 @@ myHeader('Leaderboard');
             </tr>
         </table>
     </div>
-</body>
-
 <?php
 myFooter();
 ?>
+</body>
+</html>

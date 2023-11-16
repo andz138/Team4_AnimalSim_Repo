@@ -7,7 +7,6 @@ echo "
   <title>$title</title>
   <link rel='stylesheet' type='text/css' href='styles.css'>
 </head>
-<body>
 ";
 }
 
@@ -15,10 +14,10 @@ function myFooter() {
 echo "
 <footer>
   <br>
-  Virtual Pet Game 
+  <a href='index.php'>Go to Homepage</a>
+  <br><br>
+  (C) Copyright Virtual Pet Inc.
 </footer>
-</body>
-</html>
 ";
 }
 ?>

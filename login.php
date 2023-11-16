@@ -5,29 +5,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $providedUsername = $_POST['username'];
     $providedPassword = $_POST['password'];
 
-    if ($_SESSION['username'] === $providedUsername && $_SESSION['password'] === $providedPassword) {
+    if (validateUser($providedUsername, $providedPassword)) {
+        $_SESSION['username'] = $providedUsername;
         header("location: game.php");
         exit();
     } else {
-        echo "Login failed. Please check your username and password.";
+        $loginError = "Login failed. Please check your username and password.";
     }
+}
+
+function validateUser($providedUsername, $providedPassword)
+{
+    $users = file('users.txt', FILE_IGNORE_NEW_LINES);
+
+    foreach ($users as $user) {
+        [$existingUsername, $existingPassword] = explode(',', $user);
+        if ($existingUsername === $providedUsername && $existingPassword === $providedPassword) {
+            return true;
+        }
+    }
+
+    return false;
 }
 ?>
 
-<?php
+<?php 
 include('common.php');
 myHeader('Login');
 ?>
+
 <body class="login">
-    <h2>Login</h2>
-    <form method="POST" action="">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
-        <input type="submit" value="Login">
-    </form>
-</body>
-<?php
-myFooter();
+    <fieldset>
+        <legend>Login</legend>
+
+        <form method="POST" action="">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+
+        <?php if (isset($loginError)) { echo "<p class=error>$loginError</p>"; } ?>
+    </fieldset>
+    
+<?php 
+myFooter(); 
 ?>
+</body>
+</html>
