@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('user_data_handler.php');
 
 // Initialize attributes if not set
 $_SESSION += ['happiness' => 100, 'hunger' => 50, 'energy' => 100];
@@ -35,11 +36,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['happiness'] = min(100, $_SESSION['happiness']);
         $_SESSION['energy'] = max(0, $_SESSION['energy']);
     } elseif (isset($_POST['logout'])) {
-        // Logout
+        updateUserFile($_SESSION['username'], $_SESSION['happiness'], $_SESSION['hunger'], $_SESSION['energy']);
         session_unset();
         session_destroy();
         header("location: logout.php");
         exit();
     }
+    //updates user data
+    updateUserFile($_SESSION['username'], $_SESSION['happiness'], $_SESSION['hunger'], $_SESSION['energy']);
+}
+
+//pet's mood determination
+$petMood = 'normal';
+if ($_SESSION['happiness'] > 80) {
+    $petMood = 'happy';
+} elseif ($_SESSION['happiness'] < 20) {
+    $petMood = 'sad';
+} elseif ($_SESSION['hunger'] > 80) {
+    $petMood = 'hungry';
+} elseif ($_SESSION['energy'] < 20) {
+    $petMood = 'tired';
 }
 ?>

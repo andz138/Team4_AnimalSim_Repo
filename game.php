@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 include 'common.php';
 include 'gameSubmit.php';
 
@@ -26,7 +24,25 @@ myHeader('Virtual Pet Game');
             <img class="bowl-image" src="images/bowl.png" alt="Pet">
         </button>
         <button class="button" type="submit" name="play" value="Play">
-            <img class="pet-image" src="images/pet.png" alt="Pet">
+            <?php
+            // images based on the pet's mood
+            switch ($petMood) {
+            case 'happy':
+                echo '<img class="pet-image" src="images/happy.png" alt="Happy Pet">';
+                break;
+            case 'sad':
+                echo '<img class="pet-image" src="images/sad.png" alt="Sad Pet">';
+                break;
+            case 'hungry':
+                echo '<img class="pet-image" src="images/hungry.png" alt="Hungry Pet">';
+                break;
+            case 'tired':
+                echo '<img class="pet-image" src="images/tired.png" alt="Tired Pet">';
+                break;
+            default:
+                echo '<img class="pet-image" src="images/normal.png" alt="Pet">';
+            }
+            ?>
         </button>
         <input class="logout" type="submit" name="logout" value="Logout">
     </form>
