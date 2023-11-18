@@ -13,14 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Feed button
     if (isset($_POST['feed']) && $_SESSION['energy'] < 100 && $_SESSION['hunger'] > 0) {
         $_SESSION['happiness'] = limitToRange($_SESSION['happiness'] + 5);
-        $_SESSION['hunger'] = limitToRange($_SESSION['hunger'] - 3);
+        $_SESSION['hunger'] = limitToRange($_SESSION['hunger'] - 5);
         $_SESSION['energy'] = limitToRange($_SESSION['energy'] + 5);
         $_SESSION['score'] += 1;
     } 
     // Play button
     elseif (isset($_POST['play']) && $_SESSION['energy'] > 0 && $_SESSION['hunger'] < 100) {
         $_SESSION['happiness'] = limitToRange($_SESSION['happiness'] + 5);
-        $_SESSION['hunger'] = limitToRange($_SESSION['hunger'] + 3);
+        $_SESSION['hunger'] = limitToRange($_SESSION['hunger'] + 5);
         $_SESSION['energy'] = limitToRange($_SESSION['energy'] - 5);
         $_SESSION['score'] += 1;
     } 
@@ -34,14 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Error messages
-    if (isset($_POST['feed']) && $_SESSION['hunger'] === 100) {
-        $feedMessage = '<p class="error-message">Cannot feed when hunger is at 100%</p>';
-    } elseif (isset($_POST['play']) && $_SESSION['energy'] === 0) {
+    if (isset($_POST['play']) && $_SESSION['energy'] === 0) {
         $playMessage = '<p class="error-message">Cannot play when energy is at 0%</p>';
-    } elseif (isset($_POST['feed']) && $_SESSION['energy'] === 100) {
-        $feedMessage = '<p class="error-message">Cannot feed when energy is at 100%</p>';
-    } elseif (isset($_POST['play']) && $_SESSION['hunger'] === 0) {
-        $playMessage = '<p class="error-message">Cannot play when hunger is at 0%</p>';
+    } elseif (isset($_POST['feed']) && $_SESSION['hunger'] === 0) {
+        $feedMessage = '<p class="error-message">Cannot play when hunger is at 0%</p>';
     }
 
     // Event when pet poops
