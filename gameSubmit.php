@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Determine pet mood
     $petMood = 'normal';
 
-    if ($_SESSION['hunger'] >= 83) {
+    if ($_SESSION['hunger'] >= 60) {
         $petMood = 'hungry';
     } elseif ($_SESSION['energy'] <= 50) {
         $petMood = 'tired';
