@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['play']) && $_SESSION['energy'] === 0) {
         $playMessage = '<p class="error-message">Cannot play when energy is at 0%</p>';
     } elseif (isset($_POST['feed']) && $_SESSION['hunger'] === 0) {
-        $feedMessage = '<p class="error-message">Cannot play when hunger is at 0%</p>';
+        $feedMessage = '<p class="error-message">Cannot feed when hunger is at 0%</p>';
     }
 
     // Event when pet poops
