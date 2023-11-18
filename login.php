@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('user_data_handler.php'); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $providedUsername = $_POST['username'];
@@ -7,6 +8,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (validateUser($providedUsername, $providedPassword)) {
         $_SESSION['username'] = $providedUsername;
+        $userData = getUserData($providedUsername);
+        
+        if ($userData != null) {
+            $_SESSION['happiness'] = $userData['happiness'];
+            $_SESSION['hunger'] = $userData['hunger'];
+            $_SESSION['energy'] = $userData['energy'];
+            $_SESSION['score'] = $userData['score'];
+        } else {
+            $_SESSION['happiness'] = 50;
+            $_SESSION['hunger'] = 50;
+            $_SESSION['energy'] = 50;
+            $_SESSION['score'] = 0;
+        }
+
         header("location: game.php");
         exit();
     } else {
