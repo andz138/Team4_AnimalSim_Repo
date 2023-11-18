@@ -1,56 +1,25 @@
-body, h1, h2 {
+/* Reset and general styling */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Verdana", "Geneva", sans-serif;
     text-align: center;
     font-size: 12pt;
-    font-family: "Verdana", "Geneva", sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-}
-
-body.index, body.game, body.leaderboard {
     background: url('images/bones_background.jpg') center/cover;
 }
 
 body.game {
-    background: url('images/home.jpg') center 30%/cover;
+    background: url('images/home.jpg') center/cover no-repeat;
+    background-size: 100% 100%;
 }
 
 body.register, body.login {
     background: url('images/dog_flowers.jpg') center 10%/cover;
 }
-
-.pet-image, .bowl-image {
-    position: fixed;
-    bottom: 0;
-    max-width: 25%;
-}
-
-.pet-image {
-    transform: translateX(800px);
-}
-
-.bowl-image {    
-    max-width: 10%;
-    transform: translateX(1600px);
-}
-
-.button, input[name="logout"]{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-input[name="logout"] {
-    width: 100px;
-    height: 40px;
-}
-
 
 ul {
     list-style-type: none;
@@ -73,7 +42,8 @@ ul li img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.stats, table, th, td {
+/* Tables and Forms */
+.stats, table, th, td, fieldset, legend, label, input {
     font-size: 14px;
 }
 
@@ -88,6 +58,7 @@ th, td {
     text-align: center;
 }
 
+/* Links */
 a {
     color: #0088cc;
     text-decoration: none;
@@ -97,8 +68,9 @@ a:hover {
     background-color: #FFA;
 }
 
+/* Form Elements */
 fieldset {
-    margin: 0 auto;
+    margin: 20px auto;
     width: 300px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -138,10 +110,7 @@ input[type="submit"]:hover {
     background-color: #005580;
 }
 
-p.error {
-    color: red;
-}
-
+/* Pet Stats Container */
 .pet-stats-container {
     display: flex;
     justify-content: space-around;
@@ -162,23 +131,57 @@ p.error {
     font-size: 16px;
 }
 
-.speech-bubble {
+/* Pet and Bowl Images */
+.pet-image, .bowl-image {
     position: fixed;
+    bottom: 0;
 }
 
-.speech-bubble img {
-    width: 20%;
-    height: auto;
-    display: block;
-    transform: translateX(450px);
+.pet-image {
+    transform: translateX(800px);
+    max-width: 25%;
+    left: 5%;
 }
 
-.speech-bubble p {
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    transform: translateX(170px);
-    z-index: 1;
-    color: #000;
+.bowl-image {    
+    max-width: 10%;
+    left: 10%;
+}
+
+/* Pet Mood */
+.pet-mood {
+    position: fixed;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
     font-size: 16px;
+    color: red;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logout Button & Invisible Button */
+.button, input[name="logout"] {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+.button{
+background: none;
+}
+
+
+/* Error Messages */
+p.error, .error-message {
+    color: red;
 }
